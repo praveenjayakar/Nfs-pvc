@@ -1,0 +1,71 @@
+How to install NFS server on linux
+
+sudo apt install nfs-kernel-server -y
+
+and it will going to install all the packages
+
+check the status of nfs server
+
+systemctl status nfs-server
+
+
+it will show the status of running state.
+
+
+and now make a directory from root to expose that directory to use as a nfs storage
+
+mkdir -p /srv/nfs/pj/nfstesting
+
+so in my case i have created a directory like this
+
+so now add the same dir path in /etc/exports 
+
+and this is nfs configuration
+
+sudo vi /etc/exports
+
+
+/srv/nfs/pj/nfstesting *(rw,sync,no_subtree_check,insecure)
+
+
+and here * represents the nfs mount availble for for open world means everyone can use it. but if you want to restrict to specific cidr range your mention there.
+
+
+and also the arguments along with red and write i have given insecure. kindly try to ignore it . in my case if i did not use that and the mount is not working.
+
+
+and now make sure given certails permissions to nfs directory path
+
+chmod 666 -R /srv
+
+once that done if you want to see which directory exposed as nfs storage you can view it by using this command.
+
+
+sudo exportfs -rav
+
+sudo exportfs -v 
+
+both commands will work same
+
+showmount -e ( it will work in nfs server )
+
+from other servers you can see the mounts by passing the nfs ip
+
+showmount -e ip
+
+
+if you want to mount this nfs storage to a server use this command
+
+mount -t nfs nfsserverip:/srv/nfs/pj/nfstesting /mnt
+
+it will mount to /mnt
+
+if you want to unmount use this
+
+umount /mnt
+
+
+mount | grep -i nfs   ( to check nfs unmounted or not)
+
+
+
