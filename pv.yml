@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: pv
+  labels:
+     type: local
+spec:
+  storageClassName: manual
+  capacity:
+     storage: 10Gi
+  accessModes:
+     - ReadWriteMany
+  nfs:
+    server: 13.126.100.245
+    path: "/srv/nfs/pj/nfstesting"
