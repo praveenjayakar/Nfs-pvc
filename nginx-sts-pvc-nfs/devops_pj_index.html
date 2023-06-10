@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pj DEVOPS</title>
+  <style>
+    body {
+      background-color: #000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+    
+    .title {
+      font-size: 60px;
+      color: #0f0;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      animation: flicker 1s infinite;
+    }
+    
+    .subtitle {
+      font-size: 24px;
+      color: #0f0;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    
+    .background-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.8;
+    }
+    
+    @keyframes flicker {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes background-animation {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 500px 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1 class="title">Pj DEVOPS</h1>
+      <p class="subtitle">Embracing the power of DevOps</p>
+    </div>
+  </div>
+  <div class="background-animation"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const backgroundAnimation = document.querySelector('.background-animation');
+      backgroundAnimation.style.backgroundImage = 'url("https://cdn.pixabay.com/photo/2018/01/14/23/12/hacker-3088036_960_720.jpg")';
+      backgroundAnimation.style.animation = 'background-animation 20s infinite linear';
+    });
+  </script>
+</body>
+</html>
