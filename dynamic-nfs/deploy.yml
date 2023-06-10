@@ -31,9 +31,9 @@ spec:
             - name: NFS_SERVER
               value: 13.126.100.245
             - name: NFS_PATH
-              value: /srv/nfs/pj/nfstesting
+              value: /srv/nfs/pj/nfstesting/nginx
       volumes:
         - name: nfs-client-root
           nfs:
             server: 13.126.100.245
-            path: /srv/nfs/pj/nfstesting
+            path: /srv/nfs/pj/nfstesting/nginx

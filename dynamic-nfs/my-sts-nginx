@@ -4,7 +4,7 @@ metadata:
   name: nginx-statefulset
 spec:
   serviceName: nginx
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -20,7 +20,7 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: nginx-data
-          mountPath: /usr/share/nginx/html
+          mountPath: /usr/share/nginx/html/
   volumeClaimTemplates:
   - metadata:
       name: nginx-data
