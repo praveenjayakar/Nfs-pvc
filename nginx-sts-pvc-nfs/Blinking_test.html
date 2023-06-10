@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .container {
+      color: #00ff00;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const text = "Hey user! We are testing nginx ingress. Just hit the path after the \"/\" praveen or nishant";
+      const container = document.querySelector('.container');
+      for(let i = 0; i < text.length; i++) {
+        const char = text.charAt(i);
+        const span = document.createElement('span');
+        span.innerHTML = char;
+        span.style.display = 'none';
+        container.appendChild(span);
+        setTimeout(() => {
+          span.style.display = '';
+        }, 50 * i);
+      }
+    });
+  </script>
+</body>
+</html>
