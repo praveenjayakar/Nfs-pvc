@@ -25,7 +25,7 @@ and this is nfs configuration
 sudo vi /etc/exports
 
 
-/srv/nfs/pj/nfstesting *(rw,sync,no_subtree_check,insecure)
+/srv/nfs/pj/nfstesting *(rw,sync,no_subtree_check,insecure,no_all_squash,no_root_squash)
 
 
 and here * represents the nfs mount availble for for open world means everyone can use it. but if you want to restrict to specific cidr range your mention there.
