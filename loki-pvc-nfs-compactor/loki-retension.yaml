@@ -1,0 +1,6 @@
+USER-SUPPLIED VALUES:
+loki:
+  persistence:
+    enabled: true
+    size: 5Gi
+    retention_policy: 4h
